@@ -6,13 +6,12 @@ def main():
 
 ## Visualize function
 def visualize(selectbox, m, regions):
-    regiond = selectbox
-
-    if regiond == None:
+    if selectbox == None:
         return
+    
     st.write(selectbox)
 
     for region in regions:
-        if regiond.lower() == region.name:
+        if selectbox.lower() == region.name:
             m.setCenter(region.E, region.N, 12)
 
