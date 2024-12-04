@@ -9,7 +9,7 @@ ee.Initialize()
 
 ## Global variables
 # Add the database to the code
-engine = create_engine("sqlite:///project.db")
+engine = create_engine(st.secrets.connections.project_db.url)
 metadata = MetaData()
 coordinates = Table("coordinates", metadata, autoload_with=engine)
 
