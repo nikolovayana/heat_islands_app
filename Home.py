@@ -8,10 +8,21 @@ st.set_page_config(layout="wide")
 ee.Initialize()
 
 ## Global variables
+plovdiv = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/02_Plovdiv")
+pecs = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/03_Pecs")
+salzburg = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/04_Salzburg")
+chisinau = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/01_ChisinauMunicipality")
+
+regions = [
+    {"name": "Salzburg", "geometry": salzburg},
+    {"name": "Plovdiv", "geometry": plovdiv},
+    {"name": "Pecs", "geometry": pecs},
+    {"name": "Chisinau", "geometry": chisinau}
+]
 # Add the database to the code
-engine = create_engine(st.secrets.connections.project_db.url)
-metadata = MetaData()
-coordinates = Table("coordinates", metadata, autoload_with=engine)
+# engine = create_engine(st.secrets.connections.project_db.url)
+# metadata = MetaData()
+# coordinates = Table("coordinates", metadata, autoload_with=engine)
 
 ## Testing the secrets for the API
 # st.write(st.secrets)
@@ -30,11 +41,11 @@ st.write("Hi")
 options = ["Salzburg", "Plovdiv", "Pecs", "Chisinau"]
 
 # Query the database for all coordinates, convert them to dicts and add them to a list
-with engine.connect() as conn:
-    table = conn.execute(select(coordinates))
-    regions = []
-    for row in table:
-        regions.append(row._mapping)
+# with engine.connect() as conn:
+#     table = conn.execute(select(coordinates))
+#     regions = []
+#     for row in table:
+#         regions.append(row._mapping)
 
 # Create a form with all the widgets
 with st.sidebar.form("options", border=False):
