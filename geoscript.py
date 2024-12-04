@@ -1,26 +1,11 @@
-import streamlit as st
 import geemap.foliumap as geemap
 import ee
 
-## Visualize function
-def visualize(selectbox, m, regions):
-    if selectbox == None:
-        return
-    
-    st.write(selectbox)
 
-    for region in regions:
-        if selectbox.lower() == region["name"].lower():
-            main(region["geometry"], m)
-
-
-## Implement the main function with the gee code TODO
 def main(regionInt, m):
-    # ee.Initialize()
-
     ''' AUTHORS:
     Yana Nikolova (yana.nikolova@plus.ac.at)
-    Rosen Ruev (rruev@gmail.com)
+    Rosen Ruev (rosenruev@gmail.com)
 
 
     'SCRIPT CONTENT':
@@ -59,7 +44,7 @@ def main(regionInt, m):
     # Author:       TC Chakraborty
 
     # Add layer and zoom to it in the map
-    m = geemap.Map(basemap='HYBRID')
+    # m = geemap.Map(basemap='HYBRID')
     m.centerObject(regionInt,12)
     #print("regionInt",regionInt.getInfo())
 
@@ -171,4 +156,3 @@ def main(regionInt, m):
     #  -----------------------------------------------------------------------
     #  CHECKPOINT
     #  -----------------------------------------------------------------------
-    

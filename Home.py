@@ -1,8 +1,8 @@
+import ee
 import geemap.foliumap as geemap
 import streamlit as st
-from sqlalchemy import create_engine, text, select, Table, MetaData
-from functions import visualize
-import ee
+# from sqlalchemy import create_engine, text, select, Table, MetaData
+from helpers import visualize
 
 st.set_page_config(layout="wide")
 ee.Initialize()
@@ -29,7 +29,7 @@ regions = [
 # st.write(st.secrets.get("connections", {}).get("project_db"))
 
 # Initialize the map
-m = geemap.Map()
+m = geemap.Map(basemap='HYBRID')
 
 ## Main page view
 # TODO  
