@@ -4,9 +4,8 @@ import streamlit as st
 from helpers import visualize
 
 st.set_page_config(layout="wide")
-ee.Initialize()
 
-## Global variables
+## Global variables TODO
 plovdiv = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/02_Plovdiv")
 pecs = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/03_Pecs")
 salzburg = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/04_Salzburg")
@@ -19,14 +18,10 @@ regions = [
     {"name": "Chisinau", "geometry": chisinau}
 ]
 
-## Testing the secrets for the API
-# st.write(st.secrets)
-# st.write(st.secrets.get("connections", {}).get("project_db"))
-
 # Initialize the map
 m = geemap.Map(basemap='HYBRID')
 
-## Page Information
+## Page Information and legend
 # TODO  
 st.html("<h2 style='text-align: center'>Choose a city from the sidebar</h2>")
 
