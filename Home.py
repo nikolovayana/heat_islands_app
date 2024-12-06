@@ -9,6 +9,7 @@ st.set_page_config(layout="wide")
 # TODO  
 st.html("home.html")
 
+ee.Authenticate("EARTHENGINE_TOKEN")
 ee.Initialize()
 
 m = geemap.Map() 
