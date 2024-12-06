@@ -5,6 +5,7 @@ from helpers import visualize, ee_authenticate
 
 st.set_page_config(layout="wide")
 ee_authenticate()
+ee.Initialize()
 
 ## Global variables TODO
 plovdiv = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/02_Plovdiv")
