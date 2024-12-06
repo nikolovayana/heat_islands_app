@@ -5,6 +5,7 @@ from helpers import visualize, ee_authenticate
 
 st.set_page_config(layout="wide")
 ee_authenticate()
+ee.Authenticate()
 ee.Initialize(project='project_id')
 
 ## Global variables TODO
