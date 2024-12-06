@@ -20,4 +20,3 @@ def visualize(selectbox, m, regions):
 # @st.cache_data
 def ee_authenticate():
     geemap.ee_initialize(token_name='private_key')
-    return 'success'
