@@ -10,4 +10,4 @@ st.html("home.html")
 
 ee_authenticate()
 m = geemap.Map() 
-m.to_streamlit()
+m.to_streamlit() 
