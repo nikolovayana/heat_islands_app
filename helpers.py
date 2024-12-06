@@ -1,5 +1,8 @@
 import geemap.foliumap as geemap
 import streamlit as st
+import ee
+from google.oauth2 import service_account
+from ee import oauth
 from geoscript import main
 
 # Visualize the data
@@ -14,6 +17,7 @@ def visualize(selectbox, m, regions):
 
 
 # Authenticate Google Earth Engine
-# @st.cache_data
-# def ee_authenticate(token_name=st.secrets["EARTHENGINE_TOKEN"]):
-#     geemap.ee_initialize(token_name=token_name)
+@st.cache_data
+def ee_authenticate():
+    geemap.ee_initialize(token_name=st.secrets["private_key"])
+    return 'success'
