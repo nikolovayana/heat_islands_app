@@ -9,14 +9,13 @@ def main(regionInt, m):
 
 
     'SCRIPT CONTENT':
-    1. Import assets (shapefiles with areas of interes)
+    1. Import assets (shapefiles with areas of interest)
     2. User defined variables
     3. Main code with analyses
     '''
     ################################################################################################
     # 1. Import assets
     ################################################################################################
-
     # plovdiv = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/02_Plovdiv")
     # pecs = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/03_Pecs")
     # salzburg = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/04_Salzburg")
@@ -133,7 +132,7 @@ def main(regionInt, m):
         'Ep': em.select('EMM')
     }).updateMask(notWater)
 
-    # 1.1. Selection of maps to be desplayed
+    # 1.1. Selection of maps to be displayed
 
     # m.addLayer(regionInt, {}, 'City boundary')
 
@@ -143,7 +142,7 @@ def main(regionInt, m):
     # Normalized Vegetation Index
     m.addLayer(ndvi, {'min': 0, 'max': 1, 'palette': ['white', 'green', 'darkgreen']}, 'NDVI')
 
-    # Fractional vegetaion
+    # Fractional vegetation
     #m.addLayer(fv, {min: 0, max: 1, palette: ['blue', 'white', 'green']}, 'Fractional vegetation')
 
     # Emissivity
