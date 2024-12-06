@@ -19,5 +19,5 @@ def visualize(selectbox, m, regions):
 # Authenticate Google Earth Engine
 @st.cache_data
 def ee_authenticate():
-    geemap.ee_initialize(token_name=st.secrets["private_key"])
+    geemap.ee_initialize(token_name=private_key)
     return 'success'
