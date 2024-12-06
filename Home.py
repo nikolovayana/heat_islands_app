@@ -9,7 +9,7 @@ st.set_page_config(layout="wide")
 # TODO  
 st.html("home.html")
 
-credentials = "EARTHENGINE_TOKEN"
+credentials = st.secrets["EARTHENGINE_TOKEN"]
 ee.Initialize(credentials)
 
 m = geemap.Map() 
