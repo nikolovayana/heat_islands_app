@@ -3,7 +3,7 @@ import streamlit as st
 from helpers import ee_authenticate
 
 st.set_page_config(layout="wide")
-ee_authenticate(st.secrets["json_data"], st.secrets["service_account"])
+ee_authenticate("json_data", "service_account")
 
 ## Home page view
 # TODO  
