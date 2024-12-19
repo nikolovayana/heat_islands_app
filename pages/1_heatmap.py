@@ -1,7 +1,7 @@
 import ee
 import geemap.foliumap as geemap
 import streamlit as st
-from helpers import visualize, ee_authenticate
+from helpers import visualize, ee_authenticate, verify
 
 st.set_page_config(layout="wide")
 
@@ -36,13 +36,16 @@ for region in regions:
 with st.sidebar.form("options", border=False):
     # Implementing selectbox
     selectbox_val = st.selectbox(label="City", options=options, placeholder="Choose a city", index=None)
-
-    # Implementing slider and other widgets TODO
+    slider_val = st.slider("Select a start and end year",2013, 2024, value=(2014, 2019),\
+                            help="The values should be minimum 3 years apart",)
 
     # Submit the form with visualize() function TODO
-    submitted = st.form_submit_button("Check", on_click=visualize(selectbox_val, m, regions))
+    submitted = st.form_submit_button("Check", on_click=visualize(selectbox_val, slider_val, m, regions))
+    
+
+
 if selectbox_val:
-    st.write("Heatmap for", selectbox_val)
+    st.write("Heatmap for", selectbox_val, "for the period from", str(slider_val[0]) + '-1-1 to',str(slider_val[1]) + '-1-1')
 
 # Visualize the map after submitting the form
 m.to_streamlit()

@@ -2,7 +2,7 @@ import geemap.foliumap as geemap
 import ee
 
 
-def main(regionInt, m):
+def analyze(regionInt, start_year, end_year, m):
     ''' AUTHORS:
     Yana Nikolova (yana.nikolova@plus.ac.at)
     Rosen Ruev (rosenruev@gmail.com)
@@ -29,8 +29,11 @@ def main(regionInt, m):
     # regionInt = plovdiv
 
     # Period of analyses
-    start = '2014-01-01'
-    end = '2019-01-01'
+    # start = '2014-01-01'
+    # end = '2019-01-01'
+
+    start = str(start_year) + '-01-01'
+    end = str(end_year) + '-01-01'
     #-------------------------------------------------------------
 
     ##################################################################################################
@@ -151,7 +154,7 @@ def main(regionInt, m):
     # Land Surface Temperature
     m.addLayer(lstLandsat, {'min': 25, 'max': 35, 'palette': ['blue', 'white', 'red']},'Land Surface Temperature')
 
-
+    print(start, end)
     #  -----------------------------------------------------------------------
     #  CHECKPOINT
     #  -----------------------------------------------------------------------
