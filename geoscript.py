@@ -143,7 +143,7 @@ def analyze(regionInt, start_year, end_year, m):
     #m.addLayer(thermal, { min: 295, max: 310, palette: ['blue', 'white', 'red']},'Landsat_BT')
 
     # Normalized Vegetation Index
-    m.addLayer(ndvi, {'min': 0, 'max': 1, 'palette': ['white', 'green', 'darkgreen']}, 'NDVI')
+    # m.addLayer(ndvi, {'min': 0, 'max': 1, 'palette': ['white', 'green', 'darkgreen']}, 'NDVI')
 
     # Fractional vegetation
     #m.addLayer(fv, {min: 0, max: 1, palette: ['blue', 'white', 'green']}, 'Fractional vegetation')
@@ -153,8 +153,11 @@ def analyze(regionInt, start_year, end_year, m):
 
     # Land Surface Temperature
     m.addLayer(lstLandsat, {'min': 25, 'max': 35, 'palette': ['blue', 'white', 'red']},'Land Surface Temperature')
-
-    print(start, end)
+    legend = {
+    'min': 25,
+    'max': 35,
+    'palette': ['blue', 'white', 'red']}
+    m.add_colorbar(legend, label ="Land Surface Temperature", layer_name="lstLandsat", orientation="vertical")
     #  -----------------------------------------------------------------------
     #  CHECKPOINT
     #  -----------------------------------------------------------------------
