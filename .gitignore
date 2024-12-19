@@ -1,3 +1,9 @@
 .streamlit/secrets.toml
 env/
+__pycache__/
+gee_javascript/
+gee_analyses.ipynb
+create_aoi_database.py
+project.db
+test.yml
 gee_analyses.ipnb
