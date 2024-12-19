@@ -15,4 +15,4 @@ if st.button("Click here to run analysis", type="primary", use_container_width=T
     st.switch_page("pages/1_heatmap.py")
 
 m = geemap.Map()
-m.to_streamlit()
+m.to_streamlit() 
