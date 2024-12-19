@@ -11,6 +11,8 @@ ee_authenticate(json_data, service_account)
 ## Home page view
 # TODO  
 st.html("home.html")
+if st.button("Click here to run analysis", type="primary", use_container_width=True):
+    st.switch_page("pages/1_heatmap.py")
 
-m = geemap.Map() 
-m.to_streamlit() 
+m = geemap.Map()
+m.to_streamlit()

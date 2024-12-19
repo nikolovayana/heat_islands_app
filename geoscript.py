@@ -153,11 +153,11 @@ def analyze(regionInt, start_year, end_year, m):
 
     # Land Surface Temperature
     m.addLayer(lstLandsat, {'min': 25, 'max': 35, 'palette': ['blue', 'white', 'red']},'Land Surface Temperature')
-    legend = {
+    vis_params = {
     'min': 25,
     'max': 35,
     'palette': ['blue', 'white', 'red']}
-    m.add_colorbar(legend, label ="Land Surface Temperature", layer_name="lstLandsat", orientation="vertical")
+    m.add_colorbar(vis_params, label ="Land Surface Temperature", layer_name="lstLandsat")
     #  -----------------------------------------------------------------------
     #  CHECKPOINT
     #  -----------------------------------------------------------------------
