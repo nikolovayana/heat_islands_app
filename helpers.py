@@ -4,7 +4,19 @@ import ee
 from geoscript import analyze
 
 # Visualize the data
-def visualize(selectbox, slider, m, regions):
+def visualize(selectbox: str , slider, m, regions: dict):
+    """
+    Takes the input of the user, dictionary of feature 
+    collections and a basemap and pass the right feature collection
+    the basemap to the analyze() function to run analysis on 
+    satellite remote sensing data
+
+    Args:
+        selectbox (str): selectbox input return value
+        slider (Any): two integers from the slider input return value
+        m (Any): folium basemap
+        regions (dict): dictionary from feature collections
+    """
     if selectbox == None:
         return
     
@@ -39,6 +51,16 @@ def ee_authenticate(token, service_account):
     return 
 
 def verify(values):
+    """
+    Takes two values and check if they are 3 or more
+    integers apart
+    
+    Args:
+        values : two values in a list, set or tuple
+
+    Returns:
+        bool: True if the values are 3 integers apart, otherwise False
+    """
     if values[1] - values[0] < 3:
         return False
     return True
