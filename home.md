@@ -1,2 +1,2 @@
 # Introduction
-Here goes the introduction of the page in markdown
+Here goes the introduction of the page
