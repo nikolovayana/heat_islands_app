@@ -4,9 +4,11 @@ from helpers import ee_authenticate
 
 st.set_page_config(layout="wide")
 
-json_data = st.secrets["json_data"]
-service_account = st.secrets["service_account"]
-ee_authenticate(json_data, service_account)
+ee.Initialize()
+
+# json_data = st.secrets["json_data"]
+# service_account = st.secrets["service_account"]
+# ee_authenticate(json_data, service_account)
 
 ## Home page view
 # TODO  
