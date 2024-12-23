@@ -8,23 +8,53 @@
                 font-size: 3em;
             }
 
-            h3 {
-                text-align: center;
-                color: green;
+            em {
+                
+                color: #FF4B4B;
+            }
+
+            @keyframes hover {
+                0% {
+                    opacity: 0;
+                    font-size: 1rem;
+                }
+                100% {
+                    opacity: 1;
+                    font-size: 2rem;
+                }
             }
 
             #link {
-                color: #FF4B4B;
-                text-decoration: none;
+                text-align: center;
+                font-size: 2rem;
+                animation-name: hover;
+                animation-duration: 1.5s;
+                animation-direction: forward;
             }
 
-            #link:hover {
-                opacity: 0.5;
+            @keyframes rotate {
+                0% {
+                    rotate: 360deg;
+                }
+                20% {
+                    rotate: 0deg;
+                }
+            }
+
+            #arrow {
+                text-align: center;
+                font-size: 2em;
+                animation-name: rotate;
+                animation-duration: 6s;
+                animation-direction: normal;
+                animation-iteration-count: infinite; 
+                animation-play-state: running;
             }
         </style>
     </head>
     <body>
         <h1>This is the first version of the Heat Islands application</h1>
-        <h3>Go to <em><a href='/heatmap' id="link">heatmap</a></em> to run analysis</h3>
+        <p id="link">Go to <em>heatmap</em> to run analysis</p>
+        <div id="arrow">&#x2193</div>
     </body>
 </html>

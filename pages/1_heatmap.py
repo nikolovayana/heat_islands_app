@@ -1,9 +1,9 @@
 import ee
 import geemap.foliumap as geemap
 import streamlit as st
-from helpers import visualize, ee_authenticate, verify
+from helpers import visualize, verify
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", page_icon=":fire:", page_title="Heatmap")
 
 ## Global variables TODO
 plovdiv = ee.FeatureCollection("projects/ee-nikolova100yana/assets/SpongeCity/02_Plovdiv")
