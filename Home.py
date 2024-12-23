@@ -4,11 +4,9 @@ from helpers import ee_authenticate, read_file
 
 st.set_page_config(layout="wide", page_icon=':fire:', page_title="Home")
 
-ee.Initialize()
-
-# json_data = st.secrets["json_data"]
-# service_account = st.secrets["service_account"]
-# ee_authenticate(json_data, service_account)
+json_data = st.secrets["json_data"]
+service_account = st.secrets["service_account"]
+ee_authenticate(json_data, service_account)
 
 ## Home page view
 # TODO  
