@@ -16,4 +16,4 @@ if st.button("heatmap :thermometer:", type="primary", use_container_width=True):
     st.switch_page("pages/1_heatmap.py")
 
 markdown = read_file("home.md")
-st.markdown(markdown) 
+st.markdown(markdown)

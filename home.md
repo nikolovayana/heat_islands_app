@@ -1,2 +1,7 @@
-# Introduction
-Here goes the introduction of the page
+### Deriving Land Surface Temperature from Landsat
+
+This application allows users to run ***Land Surface Temperature (LST)*** analyses using ***Google Earth Engine*** API, through a user-friendly interface provided by ***Streamlit***. Users can chose out of 13 cities, and a time-span between years 2013 and 2024 to run their ***LST*** analyses. The end result is a map of the median Land Surface Temperature for the chosen city and period. To ensure robustness of analyses a minimum period of three years is required.
+
+For the analyses ***Landsat 8*** Top of Atmosphere was used. Landsat's thermal bands measure the top-of-atmosphere brightness temperature. To obtain Land Surface Temperature we need to account for the emissivity of the land surface. Here we derive pixel-level emissivity as a function of the vegetation fraction of the pixel. For this, we are calculating the Normalized Difference Vegetation Index (***NDVI***) from the Landsat surface reflectance data.
+
+It's important to note that Landsat is a polar-orbiting satellite and it can only provide measurements at a single time of the day, which do not represent the daily progress of the ***LST***. Thus it is very important to keep in mind the time of image acquisition which might not correspond to the hottest time of the day. Furthermore, since Landsat images are acquired once every 16 days, this means that the hottest day of the year might nor be captured. 

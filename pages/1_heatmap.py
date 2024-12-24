@@ -39,7 +39,7 @@ with st.sidebar.form("options", border=False):
                             help="The values should be minimum 3 years apart",)
 
     # Submit the form with visualize() function TODO
-    submitted = st.form_submit_button("Check", on_click=visualize(selectbox_val, slider_val, m, regions))
+    submitted = st.form_submit_button("Run", on_click=visualize(selectbox_val, slider_val, m, regions))
     
 
 if selectbox_val and verify(slider_val): 
