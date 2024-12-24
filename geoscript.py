@@ -151,13 +151,15 @@ def analyze(regionInt, start_year, end_year, m):
     # Emissivity
     #m.addLayer(em, { min: 0.98, max: 0.99, palette: ['blue', 'white', 'green']},'EMM')
 
-    # Land Surface Temperature
-    m.addLayer(lstLandsat, {'min': 25, 'max': 35, 'palette': ['blue', 'white', 'red']},'Land Surface Temperature')
-    vis_params = {
+    vis_params_lst = {
     'min': 25,
     'max': 35,
     'palette': ['blue', 'white', 'red']}
-    m.add_colorbar(vis_params, label ="Land Surface Temperature", layer_name="lstLandsat")
+    # Add Legend colorbar
+
+    m.addLayer(lstLandsat, vis_params_lst ,'Land Surface Temperature')
+        
+    m.add_colorbar(vis_params_lst, label ="Land Surface Temperature (°C)",background_color='white')
     #  -----------------------------------------------------------------------
     #  CHECKPOINT
     #  -----------------------------------------------------------------------
