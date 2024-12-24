@@ -3,6 +3,8 @@
 ### App link: https://heatislands.streamlit.app
 ***Streamlit*** Application for displaying Land Surface Temperature in 13 European cities as part of the SpongeCity project. It also serves as the final project for ***CS50 Introduction to Computer Science***.
 
+![](./media/Screenshot.png)
+
 # Overview
 The application allows users to run ***Land Surface Temperature (LST)*** analyses using ***Google Earth Engine*** API, through a user-friendly interface provided by ***Streamlit***. Users can chose out of 13 cities, and a time-span between years 2013 and 2024 to run their LST analyses. The end result is a map of the median Land Surface Temperature for the chosen city and period. To ensure robustness of analyses a minimum period of three years is required. The analyses script is using Landsat 8 satellite images and is developed by Yana Nikolova. The graphical user interface in ***Streamlit***, on the other hand is developed by Rosen Ruev. For more advanced users, a Jupyter Notebook is provided, where the whole script can be run and adjusted with Python. For the moment the application supports only 4 of the planned 13 cities. The remaining cities will be added soon, when we receive the additional data needed. 
 
